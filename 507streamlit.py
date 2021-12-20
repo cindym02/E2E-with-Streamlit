@@ -56,9 +56,8 @@ NY_notSB = hospital_df[hospital_df['state'] == 'NY']
 st.dataframe(NY_notSB)
 
 st.header('Hospitals in NY Excluding Stony Brook Inpatient Data')
-NYinpatient_notSB = inpatient_df[inpatient_df['provider_id'] != 330393]
-NYinpatient_notSB = inpatient_df[inpatient_df['state'] == 'NY']
-st.dataframe(NYinpatient_notSB)
+NY_inpatient = inpatient_df[inpatient_df['state'] == 'NY']
+st.dataframe(NY_inpatient)
 
 st.header('Hospitals in NY Excluding Stony Brook Outpatient Data')
 NY_outpatient_notSB = outpatient_df[outpatient_df['provider_id'] != 330393]
