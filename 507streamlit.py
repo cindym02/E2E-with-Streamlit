@@ -73,7 +73,8 @@ type_bar = hospital_df['hospital_type'].value_counts().reset_index()
 st.bar_chart(data=type_bar, width=0, height=0, use_container_width=True)
 
 
-st.header('Question 4. What is the ?')
+st.header('Question 4. ?')
+st.map(outpatient_df)
 
 
 
