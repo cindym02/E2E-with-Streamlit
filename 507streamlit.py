@@ -70,7 +70,7 @@ st.dataframe(SB_inpatientDRGs_order)
 st.header('Question 3. What is the most common type of hospital in the U.S.?')
 st.markdown('Answer: The bar chart shows that the most common hospital type is acute care, followed by critical access hospitals.')
 type_bar = hospital_df['hospital_type'].value_counts().reset_index()
-st.bar_chart(data=type_bar, width=0, height=2, use_container_width=True)
+st.bar_chart(data=type_bar, width=0, height=0, use_container_width=True)
 
 
 st.header('Question 4. What is the ?')
