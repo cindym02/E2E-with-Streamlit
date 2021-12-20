@@ -62,6 +62,7 @@ st.header('Question 1. How does Stony Brook compare to the rest of NY?')
 st.header('Question 2. What are the most expensive inpatient DRGs at Stony Brook?')
 SB_inpatientDRGs_pivot = SB_inpatient.pivot_table(index=['provider_id','drg_definition'],values=['average_total_payments'])
 SB_inpatientDRGs_order = SB_inpatientDRGs_pivot.sort_values(['average_total_payments'], ascending=False)
+st.dataframe(SB_inpatientDRGs_order)
 
 st.header('Question 3. What are the most expensive outpatient DRGs at Stony Brook?')
 
