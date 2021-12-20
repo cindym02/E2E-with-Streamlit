@@ -33,13 +33,13 @@ def load_outpatient():
     return outpatient_df
 
 
-st.header('Hospital Data')
+st.header('All Hospital Data')
 st.dataframe(hospital_df)
 
-st.header('Inpatient Data Preview')
+st.header('All Inpatient Data Preview')
 st.dataframe(inpatient_df)
 
-st.header('Outpatient Data')
+st.header('All Outpatient Data')
 st.dataframe(outpatient_df)
 
 st.header('Stony Brook Hospital Inpatient Data')
@@ -55,20 +55,25 @@ NY_notSB = hospital_df[hospital_df['provider_id'] != 330393]
 NY_notSB = hospital_df[hospital_df['state'] == 'NY']
 st.dataframe(NY_notSB)
 
+st.header('Hospitals in NY Excluding Stony Brook Inpatient Data')
+NYinpatient_notSB = inpatient_df[inpatient_df['provider_id'] != 330393]
+NYinpatient_notSB = inpatient_df[inpatient_df['state'] == 'NY']
+st.dataframe(NYinpatient_notSB)
+
+st.header('Hospitals in NY Excluding Stony Brook Outpatient Data')
+NY_outpatient_notSB = outpatient_df[outpatient_df['provider_id'] != 330393]
+NY_outpatient_notSB = outpatient_df[outpatient_df['state'] == 'NY']
+st.dataframe(NY_outpatient_notSB)
+
 
 st.header('Question 1. How does Stony Brook compare to the rest of NY?')
 
 
 st.header('Question 2. What are the most expensive inpatient DRGs at Stony Brook?')
 st.markdown('Answer: The most expensive SB inpatient DRG is 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R., averaging $216,636.88')
-st.markdown('The pivot table below shows the most expensive SB inpatient DRGs in descending order.')
+st.markdown('The pivot table below shows the average total payments of SB inpatient DRGs in descending order.')
 SB_inpatientDRGs_pivot = SB_inpatient.pivot_table(index=['provider_id','drg_definition'],values=['average_total_payments'])
 SB_inpatientDRGs_order = SB_inpatientDRGs_pivot.sort_values(['average_total_payments'], ascending=False)
 st.dataframe(SB_inpatientDRGs_order)
 
-st.header('Question 3. What are the most expensive outpatient DRGs at Stony Brook?')
-st.markdown('Answer: The most expensive SB outpatient DRG is 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R., averaging $216,636.88')
-st.markdown('The pivot table below shows the most expensive SB inpatient DRGs in descending order.')
-SB_outpatientDRGs_pivot = SB_outpatient.pivot_table(index=['provider_id','drg_definition'],values=['average_total_payments'])
-SB_outpatientDRGs_order = SB_outpatientDRGs_pivot.sort_values(['average_total_payments'], ascending=False)
-st.dataframe(SB_outpatientDRGs_order)
+
