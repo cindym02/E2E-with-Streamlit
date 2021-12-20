@@ -9,6 +9,8 @@ Created on Sun Dec 19 23:38:47 2021
 import streamlit as st
 import pandas as pd
 import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 st.title('HHA 507: Deployment of E2E Data Process with Streamlit')
 st.write('Cindy Mei :smiley:') 
@@ -75,5 +77,12 @@ st.markdown('The pivot table below shows the average total payments of SB inpati
 SB_inpatientDRGs_pivot = SB_inpatient.pivot_table(index=['provider_id','drg_definition'],values=['average_total_payments'])
 SB_inpatientDRGs_order = SB_inpatientDRGs_pivot.sort_values(['average_total_payments'], ascending=False)
 st.dataframe(SB_inpatientDRGs_order)
+
+st.header('Question 3. What is the most common type of hospital in the U.S.?')
+bar1 = hospital_df['hospital_type'].value_counts().reset_index()
+st.bar_chart(data=bar1, width=0, height=0, use_container_width=True)
+
+
+
 
 
