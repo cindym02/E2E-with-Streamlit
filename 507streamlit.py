@@ -43,7 +43,7 @@ st.header('Outpatient Data')
 st.dataframe(outpatient_df)
 
 st.header('Stony Brook Hospital Inpatient Data')
-SB_inpatient = inpatient_df[inpatient_df['provider_id'] == '330393']
+SB_inpatient = inpatient_df[inpatient_df['provider_id']== 330393]
 st.dataframe(SB_inpatient)
 
 st.header('Stony Brook Hospital Outpatient Data')
