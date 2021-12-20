@@ -60,9 +60,15 @@ st.header('Question 1. How does Stony Brook compare to the rest of NY?')
 
 
 st.header('Question 2. What are the most expensive inpatient DRGs at Stony Brook?')
+st.markdown('Answer: The most expensive SB inpatient DRG is 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R., averaging $216,636.88')
+st.markdown('The pivot table below shows the most expensive SB inpatient DRGs in descending order.')
 SB_inpatientDRGs_pivot = SB_inpatient.pivot_table(index=['provider_id','drg_definition'],values=['average_total_payments'])
 SB_inpatientDRGs_order = SB_inpatientDRGs_pivot.sort_values(['average_total_payments'], ascending=False)
 st.dataframe(SB_inpatientDRGs_order)
 
 st.header('Question 3. What are the most expensive outpatient DRGs at Stony Brook?')
-
+st.markdown('Answer: The most expensive SB outpatient DRG is 003 - ECMO OR TRACH W MV >96 HRS OR PDX EXC FACE, MOUTH & NECK W MAJ O.R., averaging $216,636.88')
+st.markdown('The pivot table below shows the most expensive SB inpatient DRGs in descending order.')
+SB_outpatientDRGs_pivot = SB_outpatient.pivot_table(index=['provider_id','drg_definition'],values=['average_total_payments'])
+SB_outpatientDRGs_order = SB_outpatientDRGs_pivot.sort_values(['average_total_payments'], ascending=False)
+st.dataframe(SB_outpatientDRGs_order)
