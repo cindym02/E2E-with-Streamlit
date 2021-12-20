@@ -55,14 +55,15 @@ NY_notSB = hospital_df[hospital_df['provider_id'] != 330393]
 NY_notSB = hospital_df[hospital_df['state'] == 'NY']
 st.dataframe(NY_notSB)
 
-st.header('Hospitals in NY Excluding Stony Brook Inpatient Data')
-NY_inpatient = inpatient_df[inpatient_df['state'] == 'NY']
+st.header('Hospitals in NY Inpatient Data Excluding Stony Brook')
+NY_inpatient = inpatient_df[inpatient_df['provider_state'] == 'NY']
+NY_inpatient = inpatient_df[inpatient_df['provider_id'] != 330393]
 st.dataframe(NY_inpatient)
 
-st.header('Hospitals in NY Excluding Stony Brook Outpatient Data')
-NY_outpatient_notSB = outpatient_df[outpatient_df['provider_id'] != 330393]
-NY_outpatient_notSB = outpatient_df[outpatient_df['state'] == 'NY']
-st.dataframe(NY_outpatient_notSB)
+st.header('Hospitals in NY Outpatient Data Excluding Stony Brook')
+NY_inpatient = inpatient_df[inpatient_df['provider_state'] == 'NY']
+NY_inpatient = inpatient_df[inpatient_df['provider_id'] != 330393]
+st.dataframe(NY_inpatient)
 
 
 st.header('Question 1. How does Stony Brook compare to the rest of NY?')
