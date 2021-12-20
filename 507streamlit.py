@@ -55,15 +55,6 @@ NY_notSB = hospital_df[hospital_df['provider_id'] != 330393]
 NY_notSB = hospital_df[hospital_df['state'] == 'NY']
 st.dataframe(NY_notSB)
 
-st.header('Hospitals in NY Inpatient Data Excluding Stony Brook')
-NY_inpatient = inpatient_df[inpatient_df['provider_state'] == 'NY']
-NY_inpatient = inpatient_df[inpatient_df['provider_id'] != 330393]
-st.dataframe(NY_inpatient)
-
-st.header('Hospitals in NY Outpatient Data Excluding Stony Brook')
-NY_inpatient = inpatient_df[inpatient_df['provider_state'] == 'NY']
-NY_inpatient = inpatient_df[inpatient_df['provider_id'] != 330393]
-st.dataframe(NY_inpatient)
 
 
 st.header('Question 1. How does Stony Brook compare to the rest of NY?')
@@ -79,6 +70,10 @@ st.dataframe(SB_inpatientDRGs_order)
 st.header('Question 3. What is the most common type of hospital in the U.S.?')
 bar1 = hospital_df['hospital_type'].value_counts().reset_index()
 st.bar_chart(data=bar1, width=0, height=0, use_container_width=True)
+
+
+st.header('Question 4. What is the ?')
+
 
 
 
