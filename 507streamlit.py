@@ -11,7 +11,7 @@ import pandas as pd
 import numpy as np
 
 st.title('HHA 507: Deployment of E2E Data Process with Streamlit')
-st.write('Shuwen Tan :smiley:') 
+st.write('Cindy Mei :smiley:') 
 
 hospital_df = pd.read_csv('https://raw.githubusercontent.com/hantswilliams/AHI_STATS_507/main/Week13_Summary/output/df_hospital_2.csv')
 inpatient_df = pd.read_csv('https://raw.githubusercontent.com/hantswilliams/AHI_STATS_507/main/Week13_Summary/output/df_inpatient_2.csv')
@@ -43,8 +43,9 @@ st.header('Outpatient Data')
 st.dataframe(outpatient_df)
 
 st.header('Hospitals in NY Excluding Stony Brook')
-NY = hospital_df[hospital_df['state'] == 'NY']
-NY = hospital_df[hospital_df['state'] != 'NY']
+NY_notSB = hospital_df[hospital_df['state'] == 'NY']
+NY_notSB = hospital_df[hospital_df['state'] != 'NY']
+st.dataframe(NY_notSB)
 
 
 
