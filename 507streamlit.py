@@ -42,9 +42,13 @@ st.dataframe(inpatient_df)
 st.header('Outpatient Data')
 st.dataframe(outpatient_df)
 
-st.header('Stony Brook Hospital Data')
-SB_data = hospital_df[hospital_df['provider_id'] == '330393']
-st.dataframe(SB_data)
+st.header('Stony Brook Hospital Inpatient Data')
+SB_inpatient = inpatient_df[hospital_df['provider_id'] == '330393']
+st.dataframe(SB_inpatient)
+
+st.header('Stony Brook Hospital Outpatient Data')
+SB_outpatient = outpatient_df[hospital_df['provider_id'] == '330393']
+st.dataframe(SB_outpatient)
 
 st.header('Hospitals in NY Excluding Stony Brook')
 NY_notSB = hospital_df[hospital_df['state'] == 'NY']
@@ -59,6 +63,3 @@ st.header('Question 2. What are the most expensive inpatient DRGs at Stony Brook
 
 st.header('Question 3. What are the most expensive outpatient DRGs at Stony Brook?')
 
-
-
-st.write('')
