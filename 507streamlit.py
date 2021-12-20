@@ -56,7 +56,6 @@ NY_notSB = hospital_df[hospital_df['state'] == 'NY']
 st.dataframe(NY_notSB)
 
 
-
 st.header('Question 1. How does Stony Brook compare to the rest of NY?')
 
 
@@ -67,9 +66,11 @@ SB_inpatientDRGs_pivot = SB_inpatient.pivot_table(index=['provider_id','drg_defi
 SB_inpatientDRGs_order = SB_inpatientDRGs_pivot.sort_values(['average_total_payments'], ascending=False)
 st.dataframe(SB_inpatientDRGs_order)
 
+
 st.header('Question 3. What is the most common type of hospital in the U.S.?')
-bar1 = hospital_df['hospital_type'].value_counts().reset_index()
-st.bar_chart(data=bar1, width=0, height=0, use_container_width=True)
+st.markdown('Answer: The bar chart shows that the most common hospital type is acute care, followed by critical access hospitals.')
+type_bar = hospital_df['hospital_type'].value_counts().reset_index()
+st.bar_chart(data=type_bar, width=0, height=5, use_container_width=True)
 
 
 st.header('Question 4. What is the ?')
