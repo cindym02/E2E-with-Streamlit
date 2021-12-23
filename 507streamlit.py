@@ -82,8 +82,8 @@ NY_ownership = NY_notSB['hospital_ownership'].value_counts().reset_index()
 st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 
 
-st.header('Question 5. Which city in NY has the most hospitals?')
-st.markdown('Answer: ')
+st.header('Question 5. Which county in NY has the most hospitals?')
+st.markdown('Answer: Schoharie (56) and Cayuga (55) are NY counties with the most hospitals.')
 city_bar = NY_notSB['county_name'].value_counts().reset_index()
 st.bar_chart(data=city_bar, width=0, height=0, use_container_width=True)
 
