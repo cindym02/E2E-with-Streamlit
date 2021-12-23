@@ -84,7 +84,7 @@ st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 st.header('Question 5. ?')
 st.markdown('Answer: ')
 city_map = hospital_df['city'].value_counts().reset_index()
-st.map(data=city_map, zoom=None, use_container_width=True)
+st.map(data=city_map, zoom=None, use_container_width=True, columns=['lat', 'lon'])
 
 
 
