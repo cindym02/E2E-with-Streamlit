@@ -77,6 +77,7 @@ st.bar_chart(data=state_bar, width=0, height=0, use_container_width=True)
 
 
 st.header('Question 4. What are the most common categories of hospital ownership within NY?')
+st.markdown('Answer: The area chart shows that the majority of NY hospitals are voluntary nonprofit.')
 NY_ownership = NY_notSB['hospital_ownership'].value_counts().reset_index()
 st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 
