@@ -82,14 +82,14 @@ NY_ownership = NY_notSB['hospital_ownership'].value_counts().reset_index()
 st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 
 
-st.header('Question 5. ?')
+st.header('Question 5. Which city in NY has the most hospitals?')
 st.markdown('Answer: ')
-city_bar = NY_notSB['city'].value_counts().reset_index()
+city_bar = NY_notSB['county_name'].value_counts().reset_index()
 st.bar_chart(data=city_bar, width=0, height=0, use_container_width=True)
 
 
-st.header('Question 6. ?')
-st.markdown('Answer: ')
+st.header('Question 6. Which state has the most outpatient providers?')
+st.markdown('Answer: Texas has the most outpatient providers (2205), followed by California (2113).')
 outpatient_bar = outpatient_df['provider_state'].value_counts().reset_index()
 st.bar_chart(data=outpatient_bar, width=0, height=0, use_container_width=True)
 
