@@ -83,8 +83,8 @@ st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 
 st.header('Question 5. ?')
 st.markdown('Answer: ')
-hist_values = np.histogram(NY_notSB['outpatient_services'].dt.hour, bins=24, range=(0,24))[0]
-hist_values()
+hist_values = NY_notSB['outpatient_services'].value_counts().reset_index()
+st.line_chart(hist_values)
 
 
 
