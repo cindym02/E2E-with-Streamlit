@@ -56,7 +56,10 @@ NY_notSB = hospital_df[hospital_df['state'] == 'NY']
 st.dataframe(NY_notSB)
 
 
-st.header('Question 1. How does Stony Brook compare to the rest of NY?')
+st.header('Question 1. Which state has the most hospitals?')
+st.markdown('Answer: The bar chart shows that the state with the most hospitals , followed by ')
+state_bar = hospital_df['state'].value_counts().reset_index()
+st.bar_chart(data=type_bar, width=0, height=0, use_container_width=True)
 
 
 st.header('Question 2. What are the most expensive inpatient DRGs at Stony Brook?')
