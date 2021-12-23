@@ -77,8 +77,10 @@ st.bar_chart(data=state_bar, width=0, height=0, use_container_width=True)
 
 
 st.header('Question 4. ?')
-hospital_map = hospital_df(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=['lat', 'lon'])
-st.map(hospital_map)
+inpatient_area = inpatient_df['average_medicare_payments'].value_counts().reset_index()
+st.area_chart(data=inpatient_area, width=0, height=0, use_container_width=True)
+
+
 
 
 
