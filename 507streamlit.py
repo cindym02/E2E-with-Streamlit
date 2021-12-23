@@ -81,6 +81,10 @@ st.markdown('Answer: The area chart shows that the majority of NY hospitals are 
 NY_ownership = NY_notSB['hospital_ownership'].value_counts().reset_index()
 st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 
+st.header('Question 5. ?')
+st.markdown('Answer: ')
+city_map = hospital_df['city'].value_counts().reset_index()
+st.map(data=city_map, zoom=None, use_container_width=True)
 
 
 
