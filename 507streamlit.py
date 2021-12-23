@@ -77,7 +77,7 @@ st.bar_chart(data=state_bar, width=0, height=0, use_container_width=True)
 
 
 st.header('Question 4. ?')
-hospital_map = pd.hospital_df(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=['lat', 'lon'])
+hospital_map = hospital_df(np.random.randn(1000, 2) / [50, 50] + [37.76, -122.4], columns=['lat', 'lon'])
 st.map(hospital_map)
 
 
