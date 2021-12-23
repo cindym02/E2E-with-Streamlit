@@ -77,7 +77,7 @@ st.bar_chart(data=state_bar, width=0, height=0, use_container_width=True)
 
 
 st.header('Question 4. ?')
-inpatient_area = inpatient_df['average_medicare_payments'].value_counts().reset_index()
+inpatient_area = SB_inpatient['drg_definition'].value_counts().reset_index()
 st.area_chart(data=inpatient_area, width=0, height=0, use_container_width=True)
 
 
