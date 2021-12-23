@@ -83,9 +83,8 @@ st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 
 st.header('Question 5. ?')
 st.markdown('Answer: ')
-hist_values = SB_inpatient['total_discharges'].reset_index()
-st.line_chart(hist_values)
-
+ny_locations = NY_notSB['city'].str.strip('()').str.split(' ', expand=True).rename(columns={0: 'Point', 1:'lon', 2:'lat'}) 
+st.map(ny_locations)
 
 
 
