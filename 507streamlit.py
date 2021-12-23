@@ -76,9 +76,9 @@ state_bar = hospital_df['state'].value_counts().reset_index()
 st.bar_chart(data=state_bar, width=0, height=0, use_container_width=True)
 
 
-st.header('Question 4. ?')
-inpatient_area = NY_notSB['hospital_ownership'].value_counts().reset_index()
-st.area_chart(data=inpatient_area, width=0, height=0, use_container_width=True)
+st.header('Question 4. What are the most common categories of hospital ownership within NY?')
+NY_ownership = NY_notSB['hospital_ownership'].value_counts().reset_index()
+st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 
 
 
