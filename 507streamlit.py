@@ -85,13 +85,13 @@ st.area_chart(data=NY_ownership, width=0, height=0, use_container_width=True)
 st.header('Question 5. ?')
 st.markdown('Answer: ')
 city_bar = NY_notSB['city'].value_counts().reset_index()
-st.bar_chart(data=state_bar, width=0, height=0, use_container_width=True)
+st.bar_chart(data=city_bar, width=0, height=0, use_container_width=True)
 
 
 st.header('Question 6. ?')
 st.markdown('Answer: ')
 outpatient_bar = outpatient_df['provider_state'].value_counts().reset_index()
-st.bar_chart(data=state_bar, width=0, height=0, use_container_width=True)
+st.bar_chart(data=outpatient_bar, width=0, height=0, use_container_width=True)
 
 
 
