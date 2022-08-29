@@ -3,6 +3,6 @@
 
 Colab Notebook url: https://colab.research.google.com/drive/1_Icf4lXnR7gjSkn1gJKmdmtFTLMqH6tr?usp=sharing
 
-Streamlit Link:
+Streamlit Visualization Link:
 https://share.streamlit.io/cindym02/e2e-with-streamlit/main/507streamlit.py
 
